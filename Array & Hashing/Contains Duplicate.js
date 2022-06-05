@@ -2,6 +2,8 @@
  * @param {number[]} nums
  * @return {boolean}
  */
+
+// Time & Space complexity O(n)
  var containsDuplicate = function(nums) {
   const hashset = new Set();
   for (i = 0; i<nums.length; i++) {
@@ -11,4 +13,16 @@
   return false;
 };
 
-// Time & Space complexity O(n)
+// Time complexity O(n*2) Space complexity O(1)
+
+ var containsDuplicate = function(nums) {
+  // const hashset = new Set();
+  for (i = 0; i<nums.length; i++) {
+      for (j=i+1; j<nums.length; j++) {
+          if (nums[i] === nums[j]) {
+              return true;
+          }
+      }
+  }
+  return false;
+};
